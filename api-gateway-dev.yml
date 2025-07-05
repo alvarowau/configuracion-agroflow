@@ -1,9 +1,3 @@
-gateway:
-  property: Api gateway PROD
-
-server:
-  port: 8080
-
 spring:
   application:
     name: api-gateway
@@ -21,11 +15,11 @@ spring:
             - Path=/api-gateway/**
           filters:
             - StripPrefix=1
-      routes:
         - id: agroflow-config-server
           uri: lb://agroflow-config-server
           predicates:
             - Path=/api-gateway/**
+
 
 eureka:
   client:

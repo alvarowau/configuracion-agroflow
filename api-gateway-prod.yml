@@ -1,6 +1,9 @@
 gateway:
   property: Api gateway PROD
 
+server:
+  port: 80
+
 spring:
   application:
     name: api-gateway
@@ -11,6 +14,13 @@ spring:
         locator:
           enabled: true
           lower-case-service-id: true
+      routes:
+        - id: config-server
+          uri: lb://config-server
+          predicates:
+            - Path=/api-gateway/**
+          filters:
+            - StripPrefix=1
 
 eureka:
   client:

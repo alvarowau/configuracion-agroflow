@@ -18,14 +18,15 @@ spring:
         - id: config-server
           uri: lb://config-server
           predicates:
-            - Path=/api-gateway/**
+            - Path=/api-gateway/prod/**
           filters:
-            - StripPrefix=1
-      routes:
+            - StripPrefix=2
         - id: agroflow-config-server
           uri: lb://agroflow-config-server
           predicates:
-            - Path=/api-gateway/**
+            - Path=/api-gateway/prod/**
+          filters:
+            - StripPrefix=2
 
 eureka:
   client:

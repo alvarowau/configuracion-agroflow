@@ -1,5 +1,8 @@
+gateway:
+  property: Api gateway PROD
+
 server:
-  port: 8080
+  port: 80
 
 spring:
   application:
@@ -19,11 +22,4 @@ eureka:
 
 logging:
   level:
-    org.springframework.cloud.gateway: DEBUG
-    reactor.netty.http.client: DEBUG
-    reactor.netty.http.server: DEBUG
-    org.springframework.cloud.netflix: DEBUG
-    com.netflix.eureka: DEBUG
-    org.springframework.web.reactive: DEBUG
-    org.springframework.web: DEBUG
-    org.springframework.boot.autoconfigure: DEBUG
+    org.springframework.cloud.gateway: INFO

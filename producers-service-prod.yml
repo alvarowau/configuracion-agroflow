@@ -8,7 +8,7 @@ spring:
   application:
     name: producers-service
   datasource:
-    url: jdbc:postgresql://${POSTGRES_HOST_PRODUCERS:localhost}:${POSTGRES_PORT_PRODUCERS:5432}/${POSTGRES_DB_PRODUCERS:producers_db}
+    url: jdbc:postgresql://${POSTGRES_HOST_PRODUCERS:localhost}:${POSTGRES_PORT_PRODUCERS:5433}/${POSTGRES_DB_PRODUCERS:producers_db}
     username: ${POSTGRES_USER_PRODUCERS:producers_user}
     password: ${POSTGRES_PASSWORD_PRODUCERS:producers_password}
     driver-class-name: org.postgresql.Driver

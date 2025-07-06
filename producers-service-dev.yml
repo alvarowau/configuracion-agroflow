@@ -1,0 +1,40 @@
+producers-service:
+  property: producers-service DEV
+
+server:
+  port: 0
+
+spring:
+  application:
+    name: producers-service
+  datasource:
+    url: jdbc:postgresql://${POSTGRES_HOST_PRODUCERS:localhost}:${POSTGRES_PORT_PRODUCERS:5432}/${POSTGRES_DB_PRODUCERS:producers_db}
+    username: ${POSTGRES_USER_PRODUCERS:producers_user}
+    password: ${POSTGRES_PASSWORD_PRODUCERS:producers_password}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URLL:http://localhost:8761/eureka/}
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    reactor.netty.http.client: DEBUG
+    reactor.netty.http.server: DEBUG
+    org.springframework.cloud.netflix: DEBUG
+    com.netflix.eureka: DEBUG
+    org.springframework.web.reactive: DEBUG
+    org.springframework.web: DEBUG
+    org.springframework.boot.autoconfigure: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
